@@ -43,13 +43,11 @@ nav: # Структура сайта
     - Озёра России: 
       - lakes/index.md
       - Онежское озеро: lakes/onega.md
-      - Ладожское озеро: lakes/ladoga.md
-      - Байкал: lakes/baikal.md
     - Реки России:
       - rivers/index.md
       - Свирь: rivers/svir.md
       - Нева: rivers/neva.md
-      - Ангара: rivers/angara.md
+    
 
 extra:
   social: # Ссылки на соц.сети
