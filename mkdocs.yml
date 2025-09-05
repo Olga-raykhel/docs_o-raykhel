@@ -40,9 +40,9 @@ theme: # Тема сайта, информация о ее параметрах
 
 nav: # Структура сайта
     - Главная страница: index.md
-    - Озёра России: 
-      - lakes/index.md
-      - Онежское озеро: lakes/onega.md
+    -  Инструкции администратора: 
+      - admin/index.md
+      - Установка Платформы "Радар": admin/pangeo.md
     - Реки России:
       - rivers/index.md
       - Свирь: rivers/svir.md
