@@ -41,8 +41,8 @@ theme: # Тема сайта, информация о ее параметрах
 nav: # Структура сайта
     - Главная страница: index.md
     -  Инструкции администратора: 
-      - admin/index.md
-      - Установка Платформы "Радар": admin/pangeo.md
+       - admin/index.md
+       - Установка Платформы "Радар": admin/pangeo.md
     - Реки России:
       - rivers/index.md
       - Свирь: rivers/svir.md
