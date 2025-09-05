@@ -42,7 +42,11 @@ nav: # Структура сайта
     - Главная страница: index.md
     -  Инструкции администратора: 
        - admin/index.md
+
+       - Установка Платформы "Радар": admin/pangeo.md
+
       -- Установка Платформы "Радар": admin/pangeo.md
+
     - Реки России:
       - rivers/index.md
       - Свирь: rivers/svir.md
