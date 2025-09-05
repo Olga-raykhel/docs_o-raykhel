@@ -24,14 +24,14 @@
 1. Нажмите кнопку "Далее", чтобы перейти к экрану добавления узлов.
 ![](../images/install_master.png)
 1. В поле "Добавление ролей к узлам" поочередно добавьте следующие роли:
- * master
- * data
- * monitoring
- * worker
- * infra
- * backup
- * balancer
- * correlator
+   * master
+   * data
+   * monitoring
+   * worker
+   * infra
+   * backup
+   * balancer
+   * correlator
 
 Нажмите "Далее".
 ![](../images/master.png)
