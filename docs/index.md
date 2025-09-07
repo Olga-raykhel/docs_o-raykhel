@@ -35,14 +35,6 @@ hide:
 
 ---
 
-<div style="text-align: center; margin: 40px 0;">
+[Примеры документации](/docs/admin/){ .md-button .md-button--primary }
 
-  <a href="/docs/admin/" class="neon-button">
-    Примеры документации
-  </a>
-
-  <a href="/docs/courses" class="neon-button secondary">
-    Пройденные курсы
-  </a>
-
-</div>
+[Пройденные курсы](/docs/courses/){ .md-button }
