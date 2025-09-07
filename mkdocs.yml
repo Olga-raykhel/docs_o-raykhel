@@ -43,7 +43,7 @@ nav: # Структура сайта
     -  Примеры документации: 
        - admin/index.md
        - Установка Платформы "Радар": admin/pangeo.md
-       - Установка ViPNet: vipnet-installation.md
+       - Установка ViPNet: admin/vipnet-installation.md
 
     - Пройденные курсы:
       - courses/index.md
