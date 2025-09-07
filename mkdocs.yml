@@ -10,8 +10,8 @@ theme: # Тема сайта, информация о ее параметрах
     #- navigation.sections
     - navigation.path # Хлебные крошки
     - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
-    #- navigation.tabs # Верхнее меню
-    #- navigation.tabs.sticky # Фиксация верхнего меню
+    - navigation.tabs # Верхнее меню
+    - navigation.tabs.sticky # Фиксация верхнего меню
     #- Navigation sections # Настройка спойлеров в левом меню
     #- navigation.expand # Разворачивает спойлеры в левом меню по умолчанию
     #- toc.integrate # Фиксирует оглавление страницы в левом меню
@@ -40,16 +40,15 @@ theme: # Тема сайта, информация о ее параметрах
 
 nav: # Структура сайта
     - Главная страница: index.md
-    -  Инструкции администратора: 
+    -  Примеры документации: 
        - admin/index.md
        - Установка Платформы "Радар": admin/pangeo.md
 
-    - Реки России:
-      - rivers/index.md
-      - Свирь: rivers/svir.md
-      - Нева: rivers/neva.md
+    - Пройденные курсы:
+      - cources/index.md
     
-
+extra_css:
+  - styles/extra.css
 extra:
   social: # Ссылки на соц.сети
     - icon: fontawesome/brands/github-alt # Иконка гитхаба
@@ -70,6 +69,11 @@ markdown_extensions: # Расширения markdown
   - pymdownx.emoji: # Иконки и эмодзи
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.critic
+
+plugins:
+  - search
+  - material-extensions
 
 
  
