@@ -67,3 +67,68 @@
   background-color: var(--md-accent-fg-color);
   color: var(--md-accent-bg-color);
 }
+
+/* Улучшенные кнопки с hover-эффектами */
+.hover-button {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 10px 10px;
+  font-family: 'Roboto', 'Helvetica', Arial, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  color: white !important;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6200ea, #7c4dff);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+/* Эффект при наведении: поднятие и тень */
+.hover-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #7c4dff, #00b0ff);
+}
+
+/* Эффект нажатия */
+.hover-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Вторая кнопка — другого цвета */
+.hover-button.secondary {
+  background: linear-gradient(135deg, #00897b, #00c853);
+}
+
+.hover-button.secondary:hover {
+  background: linear-gradient(135deg, #00c853, #64dd17);
+}
+
+
+
+.hover-button:hover {
+  box-shadow: 
+    0 7px 10px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(124, 77, 255, 0.4);
+}
+.neon-button {
+  background: #1a1a1a;
+  color: #fff !important;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+  text-shadow: 0 0 5px #0ff;
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+  transform: translateY(-2px);
+}
