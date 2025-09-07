@@ -132,3 +132,10 @@
   box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
   transform: translateY(-2px);
 }
+.button-group {
+  display: flex;
+  gap: 100px; /* ← Вот здесь задаётся расстояние между кнопками */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
