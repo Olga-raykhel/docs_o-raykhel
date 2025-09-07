@@ -69,11 +69,11 @@ markdown_extensions: # Расширения markdown
   - pymdownx.emoji: # Иконки и эмодзи
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.critic
+  #- pymdownx.critic
 
-plugins:
-  - search
-  - material-extensions
+#plugins:
+  #- search
+  #- material-extensions
 
 
  

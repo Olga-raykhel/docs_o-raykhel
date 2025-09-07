@@ -37,7 +37,8 @@ hide:
 
 <div class="button-grid">
 
-[Примеры документации](admin/){: .md-button .md-button--primary }
-[Пройденные курсы](courses/){: .md-button .md-button--secondary }
+[![Примеры документации](https://img.shields.io/badge/📚_Примеры_документации-4A90E2?style=for-the-badge)](admin/)
+
+  [![Пройденные курсы](https://img.shields.io/badge/🎓_Пройденные_курсы-50C878?style=for-the-badge)](courses/)
 
 </div>
