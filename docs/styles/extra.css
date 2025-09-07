@@ -1,141 +1,81 @@
-/* Стиль для сетки "Фото + О себе" */
-.profile-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
-  align-items: start;
-  margin: 2rem 0;
-}
-
-/* Стиль для фотографии */
-.profile-photo {
-  max-width: 200px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: block;
-  margin: 0 auto; /* центрируем фото в колонке */
-}
-
-/* Стиль для кнопок-ссылок внизу */
-.button-grid {
+.profile-container {
   display: flex;
-  gap: 1rem;
-  margin: 2rem 0;
   flex-wrap: wrap;
+  gap: 40px;
   align-items: center;
+  margin: 30px 0;
 }
 
-@media (max-width: 768px) {
-  .button-grid {
-    flex-direction: column;
-    align-items: stretch;
-  }
+/* Текст слева */
+.profile-text {
+  flex: 2;
+  min-width: 300px;
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
-  .profile-photo {
-    margin: 0 auto;
-  }
-
-  .button-grid {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-/* Анимация кнопок при наведении */
-.md-button {
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* Фото справа */
+.profile-photo-container {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  justify-content: center;
 }
 
-.md-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #00695c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.md-button:active {
-  transform: translateY(0);
+/* Контакты — красивый список */
+.contact-list {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 20px 0;
 }
 
-/* Для primary-кнопки — более насыщенный цвет при ховере */
-.md-button--primary:hover {
-  background-color: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
-}
-
-/* Для secondary — чуть ярче */
-.md-button--secondary:hover {
-  background-color: var(--md-accent-fg-color);
-  color: var(--md-accent-bg-color);
-}
-
-/* Улучшенные кнопки с hover-эффектами */
-.hover-button {
-  display: inline-block;
-  padding: 12px 28px;
-  margin: 10px 10px;
-  font-family: 'Roboto', 'Helvetica', Arial, sans-serif;
-  font-weight: 600;
-  font-size: 14px;
+.contact-list a {
+  color: #00695c;
   text-decoration: none;
-  color: white !important;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #6200ea, #7c4dff);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  text-align: center;
-  border: none;
-  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-/* Эффект при наведении: поднятие и тень */
-.hover-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, #7c4dff, #00b0ff);
+.contact-list a:hover {
+  color: #004d40;
+  text-decoration: underline;
 }
 
-/* Эффект нажатия */
-.hover-button:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* Вторая кнопка — другого цвета */
-.hover-button.secondary {
-  background: linear-gradient(135deg, #00897b, #00c853);
-}
-
-.hover-button.secondary:hover {
-  background: linear-gradient(135deg, #00c853, #64dd17);
-}
-
-
-
-.hover-button:hover {
-  box-shadow: 
-    0 7px 10px rgba(0, 0, 0, 0.2),
-    0 0 15px rgba(124, 77, 255, 0.4);
-}
-.neon-button {
-  background: #1a1a1a;
-  color: #fff !important;
-  padding: 14px 28px;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  box-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
-  text-shadow: 0 0 5px #0ff;
-  transition: all 0.3s ease;
-}
-
-.neon-button:hover {
-  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
-  transform: translateY(-2px);
-}
+/* Кнопки — больше и красивее */
 .button-group {
   display: flex;
-  gap: 100px; /* ← Вот здесь задаётся расстояние между кнопками */
+  gap: 16px;
   flex-wrap: wrap;
+  margin: 30px 0;
   justify-content: center;
-  margin: 20px 0;
+}
+
+.button-group .md-button {
+  padding: 14px 28px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  min-width: 200px;
+  text-align: center;
+}
+
+/* На мобильных — фото сверху */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .profile-photo-container {
+    justify-content: center;
+  }
+  .contact-list {
+    text-align: center;
+  }
 }
