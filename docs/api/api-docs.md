@@ -8,12 +8,7 @@
 <script>
   window.onload = function() {
     fetch('/api/swagger.json')  // ← слэш в начале!
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Файл не найден: ' + response.status);
-        }
-        return response.json();
-      })
+      .then(response => response.json())
       .then(spec => {
         window.ui = SwaggerUIBundle({
           spec: spec,
@@ -22,14 +17,13 @@
             SwaggerUIBundle.presets.apis,
             SwaggerUIBundle.presets.syntaxHighlighting
           ],
-          layout: "BaseLayout",
-          deepLinking: true
+          layout: "BaseLayout"
         });
       })
       .catch(err => {
         console.error("Ошибка:", err);
         document.getElementById('swagger-ui').innerHTML = 
-          `<p style="color: red;">Ошибка загрузки: ${err.message}</p>`;
+          '<p style="color: red;">Не удалось загрузить swagger.json. Проверьте путь.</p>';
       });
   };
 </script>
