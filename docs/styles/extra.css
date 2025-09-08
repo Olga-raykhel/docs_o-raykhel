@@ -11,7 +11,7 @@
   flex: 2;
   min-width: 200px;
   line-height: 1.7;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
 }
 
 /* Фото справа */
@@ -79,27 +79,9 @@
     text-align: center;
   }
 }
-/* Изменение основного фона страницы */
-/* Светлая тема */
-[data-md-color-scheme="default"] .md-main__inner {
-  background-color: #d3dae0;
-}
 
-/* Тёмная тема */
-[data-md-color-scheme="slate"] .md-main__inner {
-  background-color: #1e1e1e;
-}
 
-/* Опционально: фон контента (если нужен контраст с боковой панелью) */
-.md-content__inner {
-  background-color: #e4e8ec;
-  padding: 2rem;
-}
 
-/* изменить фон всей страницы (включая шапку и навигацию) */
-body {
-  background-color: #e6ebef; /* Ещё более тонкий серый */
-}
 /* Уменьшаем размер основного текста в профиле */
 .profile-text {
   font-size: 0.95rem; /* или 14px, если предпочитаешь фиксированный размер */

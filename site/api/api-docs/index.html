@@ -11,8 +11,6 @@
       
       
       
-        <link rel="prev" href="../pangeo/">
-      
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Установка ViPNet - Ольга Райхель</title>
+        <title>API Документация (Swagger UI) - Ольга Райхель</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vipnet" class="md-skip">
+        <a href="#api-swagger-ui" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -109,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Установка ViPNet
+              API Документация (Swagger UI)
             
           </span>
         </div>
@@ -221,13 +219,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../admin/" class="md-tabs__link">
           
   
   
@@ -307,8 +303,6 @@
       
   
   
-    
-  
   
   
     
@@ -326,21 +320,20 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../admin/" class="md-nav__link ">
               
   
   
@@ -353,13 +346,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Примеры документации
@@ -375,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pangeo/" class="md-nav__link">
+      <a href="../../admin/pangeo/" class="md-nav__link">
         
   
   
@@ -395,32 +388,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Установка ViPNet
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../admin/vipnet-installation/" class="md-nav__link">
         
   
   
@@ -431,77 +402,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Термины и сокращения
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-vipnet" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Установка электронной подписи ViPNet
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Экспорт открытой части сертификата
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Смена пароля закрытой части ключа электронной подписи
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4. Смена пароля закрытой части ключа электронной подписи">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Порядок действий:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -530,131 +430,36 @@
 
 
 
-<h1 id="vipnet">Установка электронной подписи ViPNet и экспорт открытой части сертификата</h1>
-<h2 id="1">1. Термины и сокращения</h2>
-<table>
-<thead>
-<tr>
-<th>Сокращение, термин</th>
-<th>Описание</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>CSP</strong></td>
-<td>(англ. <em>Cryptography Service Provider</em>) — криптопровайдер</td>
-</tr>
-<tr>
-<td><strong>ViPNet CSP</strong></td>
-<td>Российский криптопровайдер, сертифицированный ФСБ России как средство криптографической защиты информации (СКЗИ) и электронной подписи</td>
-</tr>
-<tr>
-<td><strong>USB</strong></td>
-<td>(англ. <em>Universal Serial Bus</em> — «универсальная последовательная шина») — последовательный интерфейс для подключения периферийных устройств к вычислительной технике</td>
-</tr>
-<tr>
-<td><strong>Token</strong></td>
-<td>Компактное устройство, предназначенное для обеспечения информационной безопасности пользователя, а также используемое для идентификации владельца, безопасного удалённого доступа к информационным ресурсам и т. д.</td>
-</tr>
-<tr>
-<td><strong>Электронная подпись (ЭП)</strong></td>
-<td>Информация в электронной форме, которая присоединена к другой информации (подписываемой) или иным образом с ней связана, и используется для определения лица, подписавшего информацию</td>
-</tr>
-<tr>
-<td><strong>Сертификат ЭП</strong></td>
-<td>Электронный или бумажный документ, содержащий открытый ключ, информацию о владельце, область применения ключа, подписанный Удостоверяющим центром и подтверждающий принадлежность открытого ключа владельцу</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2-vipnet">2. Установка электронной подписи ViPNet</h2>
-<p>Чтобы установить электронную подпись в ViPNet:</p>
-<ol>
-<li>Вставьте внешний носитель с электронной подписью (USB-накопитель или token) в компьютер.</li>
-<li>Запустите программу <strong>ViPNet CSP</strong> (<code>Пуск</code> → <code>ViPNet</code> → <code>ViPNet CSP</code>).</li>
-<li>
-<p>В открывшемся окне в разделе <strong>«Контейнеры ключей»</strong> нажмите кнопку <strong>«Добавить контейнер»</strong> </p>
-<p><img alt="Рисунок 1 — ViPNet CSP" src="../../images/figure-1.png" /></p>
-</li>
-<li>
-<p>В появившейся форме укажите:</p>
-<ul>
-<li>Место хранения контейнера (USB, token, локальное хранилище),</li>
-<li>Имя контейнера.</li>
-</ul>
-<p>Нажмите <strong>«ОК»</strong>. </p>
-<p><img alt="Рисунок 2 — Выбор места хранения контейнера" src="../../images/figure-2.png" /></p>
-<p>Установка контейнера будет выполнена.</p>
-</li>
-<li>
-<p>Чтобы подтвердить установку сертификатов из контейнера, нажмите <strong>«Да»</strong> в появившемся окне.</p>
-<p><img alt="Рисунок 3 — Установка сертификатов" src="../../images/figure-3.png" /></p>
-</li>
-</ol>
-<p>После успешной установки появится сообщение об успешном завершении операции (см. Рисунок 4).</p>
-<h2 id="3">3. Экспорт открытой части сертификата</h2>
-<p>Чтобы экспортировать открытую часть сертификата электронной подписи: </p>
-<ol>
-<li>Запустите <strong>ViPNet CSP</strong> (<code>Пуск</code> → <code>ViPNet</code> → <code>ViPNet CSP</code> → <code>ViPNet CSP.exe</code>).</li>
-<li>
-<p>В разделе <strong>«Контейнеры ключей»</strong> выберите установленный контейнер и нажмите кнопку <strong>«Свойства»</strong>.</p>
-<p><img alt="Рисунок 5 — ViPNet CSP" src="../../images/figure-5.png" /></p>
-</li>
-<li>
-<p>В окне <strong>«Свойства контейнера ключей»</strong> нажмите кнопку <strong>«Открыть»</strong>.</p>
-<p><img alt="Рисунок 6 — Свойства контейнера ключей" src="../../images/figure-6.png" /></p>
-</li>
-<li>
-<p>В открывшемся окне сертификата перейдите на вкладку <strong>«Состав»</strong> и нажмите <strong>«Копировать в файл…»</strong> .</p>
-<p><img alt="Рисунок 7 — Просмотр сертификата" src="../../images/figure-7.png" /></p>
-</li>
-<li>
-<p>В окне <strong>«Мастер экспорта сертификатов»</strong> нажмите <strong>«Далее»</strong> .</p>
-<p><img alt="Рисунок 8 — Мастер экспорта сертификатов" src="../../images/figure-8.png" /></p>
-</li>
-<li>
-<p>Выберите формат экспорта: <strong>«Файл X.509 в кодировке DER (.CER)»</strong>, затем нажмите <strong>«Далее»</strong>.</p>
-<p><img alt="Рисунок 9 — Мастер экспорта сертификатов" src="../../images/figure-9.png" /></p>
-</li>
-<li>
-<p>Укажите имя и путь для сохранения файла, нажав кнопку <strong>«Обзор»</strong>. Нажмите <strong>«Далее»</strong>.</p>
-<p><img alt="Рисунок 10 — Мастер экспорта сертификатов" src="../../images/figure-10.png" /></p>
-</li>
-<li>
-<p>Нажмите <strong>«Готово»</strong>.</p>
-<p><img alt="Рисунок 11 — Мастер экспорта сертификатов" src="../../images/figure-11.png" /></p>
-</li>
-</ol>
-<p>После завершения экспорта появится сообщение об успешном выполнении операции.</p>
-<blockquote>
-<p><strong>Примечание:</strong> Экспортируется только <strong>открытая часть</strong> сертификата. Закрытый ключ остаётся в защищённом хранилище.</p>
-</blockquote>
-<h2 id="4">4. Смена пароля закрытой части ключа электронной подписи</h2>
-<p>Чтобы повысить конфиденциальность персонального сертификата, предусмотрена возможность смены пароля закрытой части ключа.</p>
-<h3 id="_1">Порядок действий:</h3>
-<ol>
-<li>Запустите <strong>ViPNet CSP</strong> (<code>Пуск</code> → <code>ViPNet</code> → <code>ViPNet CSP</code> → <code>ViPNet CSP.exe</code>).</li>
-<li>
-<p>В разделе <strong>«Контейнеры ключей»</strong> выберите нужный контейнер и нажмите <strong>«Свойства»</strong>.</p>
-<p><img alt="Рисунок 13 — ViPNet CSP" src="../../images/figure-13.png" /></p>
-</li>
-<li>
-<p>В окне <strong>«Свойства контейнера ключей»</strong> нажмите кнопку <strong>«Сменить»</strong>.</p>
-<p><img alt="Рисунок 14 — Свойства контейнера ключей" src="../../images/figure-14.png" /></p>
-</li>
-<li>
-<p>В форме смены пароля:</p>
-<ul>
-<li>Введите текущий пароль (по умолчанию: <code>1234567890</code>),</li>
-<li>Дважды введите новый пароль.</li>
-</ul>
-<p>Нажмите <strong>«ОК»</strong> .</p>
-<p><img alt="Рисунок 15 — Смена пароля" src="../../images/figure-15.png" /></p>
-</li>
-</ol>
-<p>Пароль будет успешно изменён.</p>
-<blockquote>
-<p><strong>Рекомендация:</strong> Выберите надёжный пароль и сохраните его в безопасном месте. Если вы потеряете пароль, доступ к ключу будет невозможен.</p>
-</blockquote>
+<h1 id="api-swagger-ui">API Документация (Swagger UI)</h1>
+<script src="https://unpkg.com/swagger-ui-dist@4/swagger-ui-bundle.js"></script>
+<p><link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4/swagger-ui.css" /></p>
+<div id="swagger-ui"></div>
+
+<script>
+  window.onload = function() {
+    // Загружаем  swagger.yml (путь относительно site/)
+    fetch('api/swagger.yaml')
+      .then(response => response.yaml())
+      .then(spec => {
+        window.ui = SwaggerUIBundle({
+          spec: spec,
+          dom_id: '#swagger-ui',
+          presets: [
+            SwaggerUIBundle.presets.apis,
+            SwaggerUIBundle.presets.syntaxHighlighting
+          ],
+          layout: "BaseLayout",
+          deepLinking: true,
+          showExtensions: true,
+          showCommonExtensions: true
+        });
+      })
+      .catch(err => {
+        console.error("Ошибка загрузки swagger.yaml:", err);
+        document.getElementById('swagger-ui').innerHTML = '<p style="color: red;">Не удалось загрузить спецификацию API. Проверьте, доступен ли файл <code>swagger.json</code>.</p>';
+      });
+  };
+</script>
 
 
 
