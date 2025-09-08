@@ -555,7 +555,7 @@
 
 <script>
   window.onload = function() {
-    fetch('/api/swagger.json')  // ← слэш в начале!
+    fetch('../api/swagger.json')  // ← слэш в начале!
       .then(response => response.json())
       .then(spec => {
         window.ui = SwaggerUIBundle({
