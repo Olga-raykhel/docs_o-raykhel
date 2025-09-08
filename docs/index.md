@@ -12,14 +12,18 @@ hide:
     <p>Имею опыт руководства группой технических писателей: ставлю задачи, контролирую качество, провожу обучение и развиваю команду.</p>
     <p>Самостоятельно осваиваю подход <strong>docs-as-code</strong>: работаю с Markdown, Git и MkDocs, чтобы интегрировать документацию в процесс разработки</p>
 
-    <div class="resume-button">
-      <a href="https://belgorod.hh.ru/resume/4dde2200ff038d694b0039ed1f694961703977" class="md-button md-button--primary" target="_blank">
-        Посмотреть полное резюме на HH.ru
-      </a>
-    </div>
+    <p style="text-align: center; margin-top: 20px;">
+  <a href="https://belgorod.hh.ru/resume/4dde2200ff038d694b0039ed1f694961703977" 
+     target="_blank" 
+     style="font-size: 0.9rem; color: #0b2b89ff; text-decoration: underline;">
+    → Посмотреть полное резюме на HH.ru
+  </a>
+</p>
   </div>
-
----
+<div class="profile-photo-container">
+    <img src="images/photo.jpg" alt="Ольга Райхель" class="profile-photo">
+  </div>
+</div>
 
 ## Контакты для связи
 

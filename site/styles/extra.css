@@ -79,59 +79,28 @@
     text-align: center;
   }
 }
-/* Уменьшаем основной текст, но сохраняем читаемость */
-.md-content__inner {
-  font-size: 0.92rem;
-  line-height: 1.7; /* чуть больше интервала — для удобства чтения */
-}
-
-/* Градиентный фон всей страницы */
-body {
-  background: linear-gradient(135deg, #f9f9f9 0%, #e0f2e9 50%, #d0f0dc 100%);
-  min-height: 100vh;
-  margin: 0;
-}
-
-/* Основной контент — прозрачный фон, чтобы виден был градиент */
+/* Изменение основного фона страницы */
 .md-main__inner {
-  background: transparent;
+  background-color: #ecf2f8; /* Светло-серый, мягкий фон */
 }
 
-/* Тёмно-зелёная шапка */
-.md-header {
-  background-color: #00695c !important; /* Тёмно-зелёный (Material Deep Teal 800) */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Опционально: фон контента (если нужен контраст с боковой панелью) */
+.md-content__inner {
+  background-color: #f8f9fa;
+  padding: 2rem;
 }
 
-/* Цвет текста в шапке (белый) */
-.md-header__title {
-  color: white !important;
+/* Если хочешь изменить фон всей страницы (включая шапку и навигацию) */
+body {
+  background-color: #e6ebef; /* Ещё более тонкий серый */
+}
+/* Уменьшаем размер основного текста в профиле */
+.profile-text {
+  font-size: 0.95rem; /* или 14px, если предпочитаешь фиксированный размер */
+  line-height: 1.7;
 }
 
-.md-header__topic {
-  color: #c8e6c9 !important; /* Светло-зелёный оттенок для подзаголовка */
-}
-
-/* Навигационные ссылки в шапке */
-.md-header__button {
-  color: white !important;
-}
-
-/* Логотип (если есть) */
-.md-logo {
-  filter: brightness(100);
-}
-/* Прозрачный фон боковой панели */
-.md-sidebar__scrollwrap {
-  background: transparent !important;
-}
-
-/* Цвет текста в меню */
-.md-sidebar__link {
-  color: #004d40 !important;
-}
-
-.md-sidebar__link--active {
-  color: #00695c !important;
-  font-weight: 600;
+/* Увеличиваем отступ между текстом и кнопкой */
+.resume-button {
+  margin-top: 20px;
 }
