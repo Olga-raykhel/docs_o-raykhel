@@ -48,6 +48,8 @@
     
       <link rel="stylesheet" href="../../styles/extra.css">
     
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stoplight/elements/styles.min.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -553,38 +555,440 @@
 
 
 <h1 id="api">API Документация</h1>
-<script src="https://unpkg.com/swagger-ui-dist@4/swagger-ui-bundle.js"></script>
-<p><link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4/swagger-ui.css" /></p>
-<div id="swagger-ui"></div>
+<p>```openapi
+openapi: 3.0.0</p>
+<p>info:
+  title: Пример API для работы с пользователями
+  description: API для создания, получения, обновления и удаления пользователей.
+  version: 1.0.0</p>
+<p>security:
+  - api_key: []</p>
+<p>servers:
+  - url: https://api.documentat.io/api/prod
+    description: Основной сервер
+  - url: https://api.documentat.io/api/dev
+    description: Тестовый сервер</p>
+<p>paths:
+  /users:
+    get:
+      summary: Получить список всех пользователей
+      operationId: usersGET
+      tags:
+        - users
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          description: Максимальное количество элементов на странице
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          $ref: '#/components/responses/UserListSuccess'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '500':
+          $ref: '#/components/responses/ServerError'</p>
+<div class="highlight"><pre><span></span><code>post:
+  summary: Создать нового пользователя
+  operationId: usersPOST
+  tags:
+    - users
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: &#39;#/components/schemas/CreateUser&#39;
+  responses:
+    &#39;201&#39;:
+      $ref: &#39;#/components/responses/UserCreationSuccess&#39;
+    &#39;401&#39;:
+      $ref: &#39;#/components/responses/Unauthorized&#39;
+    &#39;409&#39;:
+      $ref: &#39;#/components/responses/Conflict&#39;
+    &#39;500&#39;:
+      $ref: &#39;#/components/responses/ServerError&#39;
+</code></pre></div>
+<p>/users/{id}:
+    get:
+      summary: Получить информацию о пользователе по ID
+      operationId: usersIdGET
+      tags:
+        - users
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Уникальный идентификатор пользователя
+          schema:
+            type: integer
+      responses:
+        '200':
+          $ref: '#/components/responses/Success'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/UserNotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'</p>
+<div class="highlight"><pre><span></span><code>put:
+  summary: Обновить информацию о пользователе
 
-<script>
-  window.onload = function() {
-    fetch(api/swagger.json)  // ← путь к твоему JSON-файлу
-      .then(response => {
-        if (!response.ok) throw new Error('Файл не найден');
-        return response.json();
-      })
-      .then(spec => {
-        window.ui = SwaggerUIBundle({
-          spec: spec,
-          dom_id: '#swagger-ui',
-          presets: [
-            SwaggerUIBundle.presets.apis,
-            SwaggerUIBundle.presets.syntaxHighlighting
-          ],
-          layout: "BaseLayout",
-          deepLinking: true,
-          showExtensions: true,
-          showCommonExtensions: true
-        });
-      })
-      .catch(err => {
-        console.error("Ошибка:", err);
-        document.getElementById('swagger-ui').innerHTML = 
-          `<p style="color: red;">Не удалось загрузить API-документацию. Проверьте путь к <code>swagger.json</code>.</p>`;
-      });
-  };
-</script>
+  operationId: usersIdPUT
+  tags:
+    - users
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: Уникальный идентификатор пользователя
+      schema:
+        type: integer
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: &#39;#/components/schemas/CreateUser&#39;
+  responses:
+    &#39;200&#39;:
+      $ref: &#39;#/components/responses/UserUpdateSuccess&#39;
+    &#39;401&#39;:
+      $ref: &#39;#/components/responses/Unauthorized&#39;
+    &#39;404&#39;:
+      $ref: &#39;#/components/responses/UserNotFound&#39;
+    &#39;405&#39;:
+      $ref: &#39;#/components/responses/MethodNotAllowed&#39;
+    &#39;422&#39;:
+      $ref: &#39;#/components/responses/UnprocessableEntity&#39;
+    &#39;500&#39;:
+      $ref: &#39;#/components/responses/ServerError&#39;
+
+patch:
+  summary: Изменить данные пользователя
+  operationId: usersIdPATCH
+  tags:
+    - users
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: Уникальный идентификатор пользователя
+      schema:
+        type: integer
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: &#39;#/components/schemas/PartialUserUpdate&#39;
+  responses:
+    &#39;200&#39;:
+      $ref: &#39;#/components/responses/UserUpdateSuccess&#39;
+    &#39;401&#39;:
+      $ref: &#39;#/components/responses/Unauthorized&#39;
+    &#39;404&#39;:
+      $ref: &#39;#/components/responses/UserNotFound&#39;
+    &#39;405&#39;:
+      $ref: &#39;#/components/responses/MethodNotAllowed&#39;
+    &#39;422&#39;:
+      $ref: &#39;#/components/responses/UnprocessableEntity&#39;
+    &#39;500&#39;:
+      $ref: &#39;#/components/responses/ServerError&#39;
+
+delete:
+  summary: Удалить пользователя
+  operationId: usersIdDELETE
+  tags:
+    - users
+  parameters:
+    - name: id
+      in: path
+      required: true
+      description: Уникальный идентификатор пользователя
+      schema:
+        type: integer
+  responses:
+    &#39;204&#39;:
+      $ref: &#39;#/components/responses/UserDeleteSuccess&#39;
+    &#39;401&#39;:
+      $ref: &#39;#/components/responses/Unauthorized&#39;
+    &#39;404&#39;:
+      $ref: &#39;#/components/responses/UserNotFound&#39;
+    &#39;500&#39;:
+      $ref: &#39;#/components/responses/ServerError&#39;
+</code></pre></div>
+<p>components:
+  schemas:
+    User:
+      type: object
+      required:
+        - id
+        - username
+        - email
+        - firstName
+        - lastName
+        - address
+        - age
+        - isEmployee
+        - accountStatus
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: Уникальный идентификатор пользователя
+        username:
+          type: string
+          description: Ник пользователя
+        email:
+          type: string
+          description: Электронный адрес пользователя
+        firstName:
+          type: string
+          description: Имя пользователя
+        lastName:
+          type: string
+          description: Фамилия пользователя
+        address:
+          type: object
+          description: Адрес проживания пользователя
+          properties:
+            country:
+              type: string
+              description: Страна
+            city:
+              type: string
+              description: Город
+            street:
+              type: string
+              description: Улица
+            house:
+              type: string
+              description: Номер дома
+          required:
+            - country
+            - city
+            - street
+            - house
+        age:
+          type: integer
+          description: Возраст пользователя
+        isEmployee:
+          type: boolean
+          default: true
+          description: Является ли пользователь сотрудником
+        accountStatus:
+          type: string
+          default: active
+          description: Статус аккаунта
+          enum:
+            - active
+            - inactive
+            - suspended</p>
+<div class="highlight"><pre><span></span><code>CreateUser:
+  type: object
+  required:
+    - username
+    - email
+    - firstName
+    - lastName
+    - address
+    - age
+    - isEmployee
+    - accountStatus
+  properties:
+    username:
+      type: string
+      description: Ник пользователя
+    email:
+      type: string
+      description: Электронный адрес пользователя
+    firstName:
+      type: string
+      description: Имя пользователя
+    lastName:
+      type: string
+      description: Фамилия пользователя
+    address:
+      type: object
+      description: Адрес проживания пользователя
+      properties:
+        country:
+          type: string
+          description: Страна
+        city:
+          type: string
+          description: Город
+        street:
+          type: string
+          description: Улица
+        house:
+          type: string
+          description: Номер дома
+      required:
+        - country
+        - city
+        - street
+        - house
+    age:
+      type: integer
+      description: Возраст пользователя
+    isEmployee:
+      type: boolean
+      default: true
+      description: Является ли пользователь сотрудником
+    accountStatus:
+      type: string
+      default: active
+      description: Статус аккаунта
+      enum:
+        - active
+        - inactive
+        - suspended
+
+PartialUserUpdate:
+  type: object
+  properties:
+    username:
+      type: string
+      description: Ник пользователя
+    email:
+      type: string
+      description: Электронный адрес пользователя
+    firstName:
+      type: string
+      description: Имя пользователя
+    lastName:
+      type: string
+      description: Фамилия пользователя
+    address:
+      type: object
+      description: Адрес проживания пользователя
+      properties:
+        country:
+          type: string
+          description: Страна
+        city:
+          type: string
+          description: Город
+        street:
+          type: string
+          description: Улица
+        house:
+          type: string
+          description: Номер дома
+    aage:
+      type: integer
+      description: Возраст пользователя
+    isEmployee:
+      type: boolean
+      default: true
+      description: Является ли пользователь сотрудником
+    accountStatus:
+      type: string
+      default: active
+      description: Статус аккаунта
+      enum:
+        - active
+        - inactive
+        - suspended
+
+error:
+  required:
+    - code
+    - message
+  type: object
+  properties:
+    code:
+      type: integer
+      format: int32
+    message:
+      type: string
+</code></pre></div>
+<p>responses:
+    UserListSuccess:
+      description: Список пользователей успешно получен
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'</p>
+<div class="highlight"><pre><span></span><code>Success:
+  description: Данные успешно получены
+  content:
+    application/json:
+      schema:
+        $ref: &#39;#/components/schemas/User&#39;
+
+UserCreationSuccess:
+  description: Пользователь успешно создан
+  content:
+    application/json:
+      schema:
+        $ref: &#39;#/components/schemas/User&#39;
+
+UserUpdateSuccess:
+  description: Данные пользователя успешно обновлены
+  content:
+    application/json:
+      schema:
+        $ref: &#39;#/components/schemas/User&#39;
+
+UserDeleteSuccess:
+  description: Пользователь успешно удален
+
+UserNotFound:
+  description: &quot;&quot;
+  content:
+    application/json:
+      schema:
+        $ref: &#39;#/components/schemas/error&#39;
+
+Unauthorized:
+  description: &quot;&quot;
+  content:
+    application/json:
+      schema:
+        $ref: &#39;#/components/schemas/error&#39;
+
+Conflict:
+  description: &quot;&quot;
+  content:
+    application/json:
+      schema:
+        $ref: &#39;#/components/schemas/error&#39;
+
+MethodNotAllowed:
+  description: &quot;&quot;
+  content:
+    application/json:
+      schema:
+        $ref: &#39;#/components/schemas/error&#39;
+
+ServerError:
+  description: &quot;&quot;
+  content:
+    application/json:
+      schema:
+        $ref: &#39;#/components/schemas/error&#39;
+
+UnprocessableEntity:
+  description: &quot;&quot;
+  content:
+    application/json:
+      schema:
+        $ref: &#39;#/components/schemas/error&#39;
+</code></pre></div>
+<p>securitySchemes:
+    api_key:
+      type: apiKey
+      name: Token
+      in: header</p>
+<p>tags:
+  - name: users
+    # description: Операции с пользователями</p>
 
 
 
@@ -659,6 +1063,10 @@
     
     
       <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/@stoplight/elements/web-components.min.js"></script>
+      
+        <script src="../../path/to/your/custom-elements.js"></script>
       
     
   </body>
