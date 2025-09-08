@@ -45,6 +45,7 @@ nav: # Структура сайта
        - admin/index.md
        - Установка Платформы "Радар": admin/pangeo.md
        - Установка ViPNet: admin/vipnet-installation.md
+       - Настройка двухфакторной аутентификации: admin/multifactor.md
           
           
 extra_css:
