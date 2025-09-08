@@ -6,6 +6,6 @@
 
 Ознакомиться с документацией:
 
-- [Установка Платформы "Радар"](admin/pangeo.md)
-- [Установка ViPNet](admin/vipnet-installation.md)
-- [Настройка двухфакторной аутентификации](admin/multifactor.md)
+- [Установка Платформы "Радар"](/pangeo.md)
+- [Установка ViPNet](/vipnet-installation.md)
+- [Настройка двухфакторной аутентификации](/multifactor.md)
