@@ -71,7 +71,7 @@ markdown_extensions: # Расширения markdown
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   #- pymdownx.critic
   - pymdownx.inlinehilite
-plugins:
+#plugins:
   - search
   #- material-extensions
   - include-markdown

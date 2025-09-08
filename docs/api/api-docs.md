@@ -8,8 +8,8 @@
 <script>
   window.onload = function() {
     // Загружаем  swagger.yml (путь относительно site/)
-    fetch('api/swagger.yml')
-      .then(response => response.yml())
+    fetch('api/swagger.yaml')
+      .then(response => response.yaml())
       .then(spec => {
         window.ui = SwaggerUIBundle({
           spec: spec,
@@ -25,7 +25,7 @@
         });
       })
       .catch(err => {
-        console.error("Ошибка загрузки swagger.yml:", err);
+        console.error("Ошибка загрузки swagger.yaml:", err);
         document.getElementById('swagger-ui').innerHTML = '<p style="color: red;">Не удалось загрузить спецификацию API. Проверьте, доступен ли файл <code>swagger.json</code>.</p>';
       });
   };
