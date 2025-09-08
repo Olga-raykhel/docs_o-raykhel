@@ -9,7 +9,7 @@
 /* Текст слева */
 .profile-text {
   flex: 2;
-  min-width: 300px;
+  min-width: 200px;
   line-height: 1.7;
   font-size: 1.1rem;
 }
@@ -17,16 +17,16 @@
 /* Фото справа */
 .profile-photo-container {
   flex: 1;
-  min-width: 180px;
+  min-width: 360px;
   display: flex;
   justify-content: center;
 }
 
 .profile-photo {
-  width: 180px;
-  height: 180px;
+  width: 360px;
+  height: 360px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 70%;
   border: 4px solid #00695c;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -83,4 +83,51 @@
 .md-content__inner {
   font-size: 0.92rem;
   line-height: 1.7; /* чуть больше интервала — для удобства чтения */
+}
+/* Заменить цвет кнопок и навигации */
+.md-header {
+  background-color: #005a9e !important; /* тёмно-синий */
+}
+
+.md-nav__link--active,
+.md-nav__link:hover {
+  color: #005a9e !important;
+}
+
+.md-button,
+.md-button--primary {
+  background: #005a9e !important;
+  border-color: #005a9e;
+}
+
+/* Цвет ссылок */
+a {
+  color: #005a9e;
+}
+
+a:hover {
+  color: #003f6d;
+}
+/* docs/stylesheets/extra.css */
+:root {
+  --md-primary-fg-color: #1976d2;
+  --md-accent-fg-color: #1565c0;
+  --md-default-fg-color--light: #5f6c74;
+}
+
+.md-header {
+  background-color: #1976d2 !important;
+}
+
+.md-button,
+.md-button--primary {
+  background: #1976d2 !important;
+}
+
+a {
+  color: #1976d2;
+}
+
+a:hover {
+  color: #0d47a1;
 }
