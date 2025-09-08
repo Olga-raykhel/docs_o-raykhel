@@ -7,7 +7,7 @@
 
 <script>
   window.onload = function() {
-    fetch('/api/openapi.json')  // ← путь к твоему JSON-файлу
+    fetch('/api/swagger.json')  // ← путь к твоему JSON-файлу
       .then(response => {
         if (!response.ok) throw new Error('Файл не найден');
         return response.json();
@@ -29,7 +29,7 @@
       .catch(err => {
         console.error("Ошибка:", err);
         document.getElementById('swagger-ui').innerHTML = 
-          `<p style="color: red;">Не удалось загрузить API-документацию. Проверьте путь к <code>openapi.json</code>.</p>`;
+          `<p style="color: red;">Не удалось загрузить API-документацию. Проверьте путь к <code>swagger.json</code>.</p>`;
       });
   };
 </script>
