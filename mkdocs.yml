@@ -47,6 +47,9 @@ nav: # Структура сайта
        - Установка ViPNet: admin/vipnet-installation.md
     - API Documentation:
        - Интерактивная документация: api/api-docs.md
+
+watch:
+  - docs/api/swagger.json
     
 extra_css:
   - styles/extra.css
