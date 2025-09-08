@@ -28,9 +28,3 @@ hide:
   <p>📱 <a href="https://t.me/Olga_osp">Telegram: @Olga_osp</a></p>
 </div>
 
----
-
-<div class="button-group">
-  <a href="../docs/admin/" class="md-button md-button--primary">Примеры документации</a>
-  <a href="../docs/courses/" class="md-button md-button--primary">Пройденные курсы</a>
-</div>

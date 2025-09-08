@@ -84,50 +84,54 @@
   font-size: 0.92rem;
   line-height: 1.7; /* чуть больше интервала — для удобства чтения */
 }
-/* Заменить цвет кнопок и навигации */
+
+/* Градиентный фон всей страницы */
+body {
+  background: linear-gradient(135deg, #f9f9f9 0%, #e0f2e9 50%, #d0f0dc 100%);
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Основной контент — прозрачный фон, чтобы виден был градиент */
+.md-main__inner {
+  background: transparent;
+}
+
+/* Тёмно-зелёная шапка */
 .md-header {
-  background-color: #005a9e !important; /* тёмно-синий */
+  background-color: #00695c !important; /* Тёмно-зелёный (Material Deep Teal 800) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.md-nav__link--active,
-.md-nav__link:hover {
-  color: #005a9e !important;
+/* Цвет текста в шапке (белый) */
+.md-header__title {
+  color: white !important;
 }
 
-.md-button,
-.md-button--primary {
-  background: #005a9e !important;
-  border-color: #005a9e;
+.md-header__topic {
+  color: #c8e6c9 !important; /* Светло-зелёный оттенок для подзаголовка */
 }
 
-/* Цвет ссылок */
-a {
-  color: #005a9e;
+/* Навигационные ссылки в шапке */
+.md-header__button {
+  color: white !important;
 }
 
-a:hover {
-  color: #003f6d;
+/* Логотип (если есть) */
+.md-logo {
+  filter: brightness(100);
 }
-/* docs/stylesheets/extra.css */
-:root {
-  --md-primary-fg-color: #1976d2;
-  --md-accent-fg-color: #1565c0;
-  --md-default-fg-color--light: #5f6c74;
-}
-
-.md-header {
-  background-color: #1976d2 !important;
+/* Прозрачный фон боковой панели */
+.md-sidebar__scrollwrap {
+  background: transparent !important;
 }
 
-.md-button,
-.md-button--primary {
-  background: #1976d2 !important;
+/* Цвет текста в меню */
+.md-sidebar__link {
+  color: #004d40 !important;
 }
 
-a {
-  color: #1976d2;
-}
-
-a:hover {
-  color: #0d47a1;
+.md-sidebar__link--active {
+  color: #00695c !important;
+  font-weight: 600;
 }
