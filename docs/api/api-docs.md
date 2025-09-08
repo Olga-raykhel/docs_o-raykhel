@@ -8,7 +8,7 @@
 <script>
   window.onload = function() {
     // Загружаем  swagger.yml (путь относительно site/)
-    fetch('api/swagger.json')
+    fetch('../api/swagger.json')
       .then(response => response.json())
       .then(spec => {
         window.ui = SwaggerUIBundle({
