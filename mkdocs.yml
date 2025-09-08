@@ -6,7 +6,7 @@ theme: # Тема сайта, информация о ее параметрах
     text: Roboto # Шрифт текста
     code: Roboto Mono # Шрифт для текста кода
   features:
-    #- navigation.sections
+    - navigation.sections
     - navigation.path # Хлебные крошки
     - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
     - navigation.tabs # Верхнее меню
@@ -54,9 +54,6 @@ extra:
   social: # Ссылки на соц.сети
     - icon: fontawesome/brands/github-alt # Иконка гитхаба
       link: https://github.com/Olga-raykhel/docs_o-raykhel # Ссылка на гитхаб
-
-extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js
 
 markdown_extensions: # Расширения markdown
   - admonition # Поддержка информационных панелей (сообщений типа «Внимание», «Совет», «Примечание», etc.)

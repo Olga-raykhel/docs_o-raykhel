@@ -1,36 +1,35 @@
 # API Документация
 
-<link href="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+<script src="https://unpkg.com/swagger-ui-dist@4/swagger-ui-bundle.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4/swagger-ui.css" />
 
-<div id="redoc-container"></div>
+<div id="swagger-ui"></div>
 
 <script>
   window.onload = function() {
-    fetch('/api/openapi.yaml')
-      .then(response => response.text())
-      .then(yaml => {
-        const spec = window.jsyaml.load(yaml);
-        Redoc.init(spec, {
-          theme: {
-            spacing: {
-              sectionVertical: '60px'
-            }
-          },
-          scrollYOffset: 70,
-          hideDownloadButton: false,
-          expandResponses: "all"
-        }, document.getElementById('redoc-container'));
+    fetch('/api/openapi.json')  // ← путь к твоему JSON-файлу
+      .then(response => {
+        if (!response.ok) throw new Error('Файл не найден');
+        return response.json();
+      })
+      .then(spec => {
+        window.ui = SwaggerUIBundle({
+          spec: spec,
+          dom_id: '#swagger-ui',
+          presets: [
+            SwaggerUIBundle.presets.apis,
+            SwaggerUIBundle.presets.syntaxHighlighting
+          ],
+          layout: "BaseLayout",
+          deepLinking: true,
+          showExtensions: true,
+          showCommonExtensions: true
+        });
       })
       .catch(err => {
-        document.getElementById('redoc-container').innerHTML = 
-          `<p style="color: red;">Ошибка: ${err.message}</p>`;
+        console.error("Ошибка:", err);
+        document.getElementById('swagger-ui').innerHTML = 
+          `<p style="color: red;">Не удалось загрузить API-документацию. Проверьте путь к <code>openapi.json</code>.</p>`;
       });
   };
 </script>
-
-<style>
-  #redoc-container {
-    margin-top: 20px;
-  }
-</style>
