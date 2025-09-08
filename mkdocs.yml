@@ -6,7 +6,7 @@ theme: # Тема сайта, информация о ее параметрах
     text: Roboto # Шрифт текста
     code: Roboto Mono # Шрифт для текста кода
   features:
-    - navigation.sections
+    #- navigation.sections
     - navigation.path # Хлебные крошки
     - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
     - navigation.tabs # Верхнее меню
@@ -39,17 +39,16 @@ theme: # Тема сайта, информация о ее параметрах
       primary: deep purple
       accent: blue
 
-
 nav: # Структура сайта
     - О себе: index.md
     -  Примеры документации: 
        - admin/index.md
        - Установка Платформы "Радар": admin/pangeo.md
        - Установка ViPNet: admin/vipnet-installation.md
-    - API Documentation:
-       - Интерактивная документация: api/api.html
           
           
+extra_css:
+  - styles/extra.css
 extra:
   social: # Ссылки на соц.сети
     - icon: fontawesome/brands/github-alt # Иконка гитхаба
