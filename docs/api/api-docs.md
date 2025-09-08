@@ -1,5 +1,3 @@
-# API Документация (Swagger UI)
-
 # API Документация
 
 <link href="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js" rel="stylesheet">

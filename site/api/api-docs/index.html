@@ -549,32 +549,41 @@
 
 
 <h1 id="api-swagger-ui">API Документация (Swagger UI)</h1>
-<script src="https://unpkg.com/swagger-ui-dist@4/swagger-ui-bundle.js"></script>
-<p><link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4/swagger-ui.css" /></p>
-<div id="swagger-ui"></div>
+<h1 id="api">API Документация</h1>
+<p><link href="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js" rel="stylesheet"></p>
+<script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+
+<div id="redoc-container"></div>
 
 <script>
   window.onload = function() {
-    fetch('../api/swagger.json')  // ← слэш в начале!
-      .then(response => response.json())
-      .then(spec => {
-        window.ui = SwaggerUIBundle({
-          spec: spec,
-          dom_id: '#swagger-ui',
-          presets: [
-            SwaggerUIBundle.presets.apis,
-            SwaggerUIBundle.presets.syntaxHighlighting
-          ],
-          layout: "BaseLayout"
-        });
+    fetch('/api/openapi.yaml')
+      .then(response => response.text())
+      .then(yaml => {
+        const spec = window.jsyaml.load(yaml);
+        Redoc.init(spec, {
+          theme: {
+            spacing: {
+              sectionVertical: '60px'
+            }
+          },
+          scrollYOffset: 70,
+          hideDownloadButton: false,
+          expandResponses: "all"
+        }, document.getElementById('redoc-container'));
       })
       .catch(err => {
-        console.error("Ошибка:", err);
-        document.getElementById('swagger-ui').innerHTML = 
-          '<p style="color: red;">Не удалось загрузить swagger.json. Проверьте путь.</p>';
+        document.getElementById('redoc-container').innerHTML = 
+          `<p style="color: red;">Ошибка: ${err.message}</p>`;
       });
   };
 </script>
+
+<style>
+  #redoc-container {
+    margin-top: 20px;
+  }
+</style>
 
 
 
@@ -649,6 +658,8 @@
     
     
       <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
       
     
   </body>
