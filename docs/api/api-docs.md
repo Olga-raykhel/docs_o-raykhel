@@ -1,29 +1,38 @@
 # API Документация (Swagger UI)
 
-<script src="https://unpkg.com/swagger-ui-dist@4/swagger-ui-bundle.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4/swagger-ui.css" />
+# API Документация
 
-<div id="swagger-ui"></div>
+<link href="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+
+<div id="redoc-container"></div>
 
 <script>
   window.onload = function() {
-    fetch('../api/swagger.json')  // ← слэш в начале!
-      .then(response => response.json())
-      .then(spec => {
-        window.ui = SwaggerUIBundle({
-          spec: spec,
-          dom_id: '#swagger-ui',
-          presets: [
-            SwaggerUIBundle.presets.apis,
-            SwaggerUIBundle.presets.syntaxHighlighting
-          ],
-          layout: "BaseLayout"
-        });
+    fetch('/api/openapi.yaml')
+      .then(response => response.text())
+      .then(yaml => {
+        const spec = window.jsyaml.load(yaml);
+        Redoc.init(spec, {
+          theme: {
+            spacing: {
+              sectionVertical: '60px'
+            }
+          },
+          scrollYOffset: 70,
+          hideDownloadButton: false,
+          expandResponses: "all"
+        }, document.getElementById('redoc-container'));
       })
       .catch(err => {
-        console.error("Ошибка:", err);
-        document.getElementById('swagger-ui').innerHTML = 
-          '<p style="color: red;">Не удалось загрузить swagger.json. Проверьте путь.</p>';
+        document.getElementById('redoc-container').innerHTML = 
+          `<p style="color: red;">Ошибка: ${err.message}</p>`;
       });
   };
 </script>
+
+<style>
+  #redoc-container {
+    margin-top: 20px;
+  }
+</style>
