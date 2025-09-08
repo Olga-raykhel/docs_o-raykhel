@@ -7,7 +7,7 @@
 
 <script>
   window.onload = function() {
-    fetch('/swagger.json')  // ← путь к твоему JSON-файлу
+    fetch(api/swagger.json)  // ← путь к твоему JSON-файлу
       .then(response => {
         if (!response.ok) throw new Error('Файл не найден');
         return response.json();
