@@ -566,9 +566,13 @@
 
 <script>
   window.onload = function() {
-    // Загружаем  swagger.yml (путь относительно site/)
-    fetch('../api/swagger.json')
-      .then(response => response.json())
+    fetch('/api/swagger.json')  // ← слэш в начале!
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Файл не найден: ' + response.status);
+        }
+        return response.json();
+      })
       .then(spec => {
         window.ui = SwaggerUIBundle({
           spec: spec,
@@ -578,14 +582,13 @@
             SwaggerUIBundle.presets.syntaxHighlighting
           ],
           layout: "BaseLayout",
-          deepLinking: true,
-          showExtensions: true,
-          showCommonExtensions: true
+          deepLinking: true
         });
       })
       .catch(err => {
-        console.error("Ошибка загрузки swagger.json:", err);
-        document.getElementById('swagger-ui').innerHTML = '<p style="color: red;">Не удалось загрузить спецификацию API. Проверьте, доступен ли файл <code>swagger.json</code>.</p>';
+        console.error("Ошибка:", err);
+        document.getElementById('swagger-ui').innerHTML = 
+          `<p style="color: red;">Ошибка загрузки: ${err.message}</p>`;
       });
   };
 </script>

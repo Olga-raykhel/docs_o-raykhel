@@ -47,8 +47,7 @@ nav: # Структура сайта
        - Установка Платформы "Радар": admin/pangeo.md
        - Установка ViPNet: admin/vipnet-installation.md
     - API Documentation:
-       - api/index.md
-       - Интерактивная документация: api/api-docs.md
+       - Интерактивная документация: api-docs.md
     
 extra_css:
   - styles/extra.css
