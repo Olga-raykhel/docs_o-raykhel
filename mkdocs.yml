@@ -48,11 +48,12 @@ nav: # Структура сайта
     - API Documentation:
        - Интерактивная документация: api/api-docs.md
 
-watch:
-  - docs/api/swagger.json
-    
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/@stoplight/elements/web-components.min.js
+  - path/to/your/custom-elements.js  # опционально
 extra_css:
   - styles/extra.css
+  - https://cdn.jsdelivr.net/npm/@stoplight/elements/styles.min.css
 extra:
   social: # Ссылки на соц.сети
     - icon: fontawesome/brands/github-alt # Иконка гитхаба
@@ -75,6 +76,7 @@ markdown_extensions: # Расширения markdown
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   #- pymdownx.critic
   - pymdownx.inlinehilite
+  
 
 
  
