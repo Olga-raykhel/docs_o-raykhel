@@ -12,14 +12,16 @@ theme: # Тема сайта, информация о ее параметрах
     - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
     - navigation.tabs # Верхнее меню
     - navigation.tabs.sticky # Фиксация верхнего меню
-    #- Navigation sections # Настройка спойлеров в левом меню
-    #- navigation.expand # Разворачивает спойлеры в левом меню по умолчанию
-    #- toc.integrate # Фиксирует оглавление страницы в левом меню
+    - Navigation sections # Настройка спойлеров в левом меню
+    - navigation.expand # Разворачивает спойлеры в левом меню по умолчанию
+    - toc.integrate # Фиксирует оглавление страницы в левом меню
     - navigation.instant # Функция быстрой загрузки страниц
     - navigation.top # Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы
     - search.suggest # Подсказки при вводе поискового запроса
     - search.highlight # Подсветка результатов поиска в тексте страницы
     - content.code.copy # Кнопка копирования в блоке кода
+    - content.code.annotate
+    - content.tabs # Вкладки в контенте
 
   language: ru # Язык
   palette: # Настройки светлой и тёмной тем
@@ -68,10 +70,14 @@ markdown_extensions: # Расширения markdown
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   #- pymdownx.critic
-
-#plugins:
-  #- search
+  - pymdownx.inlinehilite
+plugins:
+  - search
   #- material-extensions
+  - include-markdown
+  - openapi:
+      spec: api/openapi.yaml
+      output_dir: api/auto
 
 
  
