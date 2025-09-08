@@ -75,7 +75,7 @@ plugins:
   - search
   #- material-extensions
   - include-markdown
-  - openapi:
+  #- openapi:
       spec: api/openapi.yaml
       output_dir: api/auto
 
