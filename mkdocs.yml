@@ -39,6 +39,7 @@ theme: # Тема сайта, информация о ее параметрах
       primary: deep purple
       accent: blue
 
+
 nav: # Структура сайта
     - О себе: index.md
     -  Примеры документации: 
@@ -46,18 +47,9 @@ nav: # Структура сайта
        - Установка Платформы "Радар": admin/pangeo.md
        - Установка ViPNet: admin/vipnet-installation.md
     - API Documentation:
-       - Интерактивная документация: api/api-docs.md
+       - Интерактивная документация: api/api.html
           
-          ```yaml
-theme:
-  name: material
-
-extra_javascript:
-  - https://cdn.jsdelivr.net/npm/@stoplight/elements/web-components.min.js
-  - path/to/your/custom-elements.js  # опционально
-extra_css:
-  - styles/extra.css
-  - https://cdn.jsdelivr.net/npm/@stoplight/elements/styles.min.css
+          
 extra:
   social: # Ссылки на соц.сети
     - icon: fontawesome/brands/github-alt # Иконка гитхаба
